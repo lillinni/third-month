@@ -16,7 +16,7 @@ async def start_handler(message: types.Message):
             ],
             [
                 types.InlineKeyboardButton(text='О нас', 
-                                            callback_data='about_us'),  # Изменено
+                                            callback_data='about_us'),  
                 types.InlineKeyboardButton(text='Наш сайт',
                                             url='https://taplink.cc/capitokg?fbclid=PAZXh0bgNhZW0CMTEAAabzZ6_tnL4Zr9hr7LvfxOE_OAqlYs_GgyfoCBjw2IdnyHOCOTx_DLe_Y60_aem_GzKbDGsYw_JOIGCQ5fybtA')
             ],
@@ -39,7 +39,7 @@ async def contacts_handler(callback: types.CallbackQuery):
     await callback.message.answer('Наши контакты: +996 998 100 724')
     await callback.answer()
 
-@start_router.callback_query(F.data == 'about_us')  # Изменено
+@start_router.callback_query(F.data == 'about_us')  
 async def about_us_handler(callback: types.CallbackQuery):
     await callback.message.answer('О нас: Мы - самая уютная кофейня в Бишкеке со множеством филиалов по всему городу')
     await callback.answer()
